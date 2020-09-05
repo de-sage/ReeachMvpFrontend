@@ -16,5 +16,10 @@ script:
   - npm run test:unit
   - npm run test-e2e:open
   - npm run test-e2e
-after_script:
-  - cat ./coverage/lcov.info | coveralls
+after_success:
+  - npm run coverage
+  - npm run build
+deploy:
+  provider: heroku
+  api_key: jkkjkj
+  on: staging

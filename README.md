@@ -1,7 +1,7 @@
 # ReeachMvpFrontend
 
 [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
-[![Build Status](https://travis-ci.org/zanio/stageQiuz.svg?branch=stage)](https://travis-ci.org/zanio/stageQiuz) 
+[![Build Status](https://travis-ci.com/reeach/ReeachMvpFrontend.svg?branch=master)](https://travis-ci.com/reeach/ReeachMvpFrontend)
 [![Coverage Status](https://coveralls.io/repos/github/reeach/ReeachMvpFrontend/badge.svg?branch=staging)](https://coveralls.io/github/reeach/ReeachMvpFrontend?branch=staging)
 
 # Reeach
