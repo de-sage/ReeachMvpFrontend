@@ -15,7 +15,17 @@ install:
 script:
   - npm run test:unit
   - $(npm bin)/cypress run --record
+branches:
+  only:
+    - staging
 after_script:
   - cat ./coverage/lcov.info | coveralls
 after_success:
   - npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: ADD_API_KEY_HERE
+  app:
+    master: node-hello-world99
+    dev: node-hello-world-staging

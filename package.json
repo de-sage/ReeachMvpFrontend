@@ -11,8 +11,7 @@
     "heroku-'postbuild'": "npm run clean && npm run build",
     "start": "node server/server.js",
     "test-e2e:open": "cypress open",
-    "test-e2e": "cypress run",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test-e2e": "cypress run"
   },
   "dependencies": {
     "autoprefixer": "^9.8.5",
@@ -32,7 +31,8 @@
     "vuelidate": "^0.7.5",
     "vuetify": "^2.2.11",
     "nyc": "^14.1.1",
-    "vuex": "^3.1.1"
+    "vuex": "^3.1.1",
+    "coveralls": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -51,7 +51,6 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.1.0",
-    "coveralls": "^3.1.0",
     "cross-env": "^6.0.3",
     "cypress": "^5.1.0",
     "eslint": "^6.7.2",
