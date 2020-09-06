@@ -39,6 +39,6 @@ module.exports = {
     "!**/node_modules/**"
   ],
 
-  setupFiles: ["jest-date-mock"],
+  setupFiles: ["jest-date-mock","<rootDir>/tests/unit/index.js"],
   preset: "@vue/cli-plugin-unit-jest"
 };

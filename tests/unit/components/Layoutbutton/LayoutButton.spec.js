@@ -1,9 +1,15 @@
 import { shallowMount } from "@vue/test-utils";
 import LayoutButton from "../../../../src/components/LayoutButton/LayoutButton";
 
-const wrapper = shallowMount(LayoutButton);
 
 describe("LayoutButton Component", () => {
+  let wrapper;
+  beforeAll(() => {
+    wrapper =  shallowMount(LayoutButton,{propsData: {
+        btnLink: 'http://localhost:8091'
+    }});
+
+  });
   it("It should not have a created hook defined", () => {
     expect(typeof LayoutButton.created).toBe("undefined");
   });

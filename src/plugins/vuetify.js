@@ -7,6 +7,7 @@ import { preset } from "vue-cli-plugin-vuetify-preset-crane/preset";
 import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
 import Bell from "../components/icons/Bell";
 import Chevron from "../components/icons/chevron-down";
+
 Vue.use(Vuetify);
 
 const options = {
