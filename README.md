@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.com/reeach/ReeachMvpFrontend.svg?branch=staging)](https://travis-ci.com/reeach/ReeachMvpFrontend)
 [![Coverage Status](https://coveralls.io/repos/github/reeach/ReeachMvpFrontend/badge.svg?branch=staging)](https://coveralls.io/github/reeach/ReeachMvpFrontend?branch=staging)
 
-# Reeach
+# [Reeach](https://reeach.herokuapp.com/)
 
 ## Project setup
 ```
