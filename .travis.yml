@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+- 10
+addons:
+  apt:
+    packages:
+    - libgconf-2-4
+cache:
+  npm: true
+  directories:
+  - node_modules
+install:
+- npm ci
+script:
+- npm run test:unit
+- "$(npm bin)/cypress run"
+after_script:
+- cat ./coverage/lcov.info | coveralls
+after_success:
+- npm run build
+before_deploy: "./before_deploy.sh"
+deploy:
+  provider: heroku
+  api_key:
+    secure: P5PDuGg/z6JlzMcSKfn8sB2X2LhqBmi+tOPrECH7QtJs3RPpwMaOvUfl4gUPiAy4LLI16CZ7Q/WECSlt9Y4LZt2kniVk1eFaXO5/5zpSHUx4rfIIx++my5vKtzZWP9fCzyfChghcjnDmVyfzPk7cn5Wqldkg09dBYinml2g4JDPHfsybvAjQyiypkGjaQQw3d5rWsjqbwNm3LRni2P8UyS/tdcCTnKG06E67qwBGznajYnEzREFYG7DPI6VDjpZY9E8dxxXzrhyIWAC8jVwucd58bTgos/YaYfanOlBUo0Wnd3T1Di5892UWFWOLVo+pAUJH38F3YpZAeaFoWJHr1fPh6xfc27JKjgkRlSpES3yAcj9B8h/0bmyOQeW8suQ2zB8cPT7/CQSeG0c3c+J1rbZ7lpPYghJIYE5Rj9e8DYZnRD0PZcM7RobP8eCIKzPLJqbIOHljlqKflDOYTWoMAt7SRErDJBZgsBAApDtqE4qYPgqTzt22adzqI48GBO885NRZ/75vogA/B15QV04wVPCaELD0IMwvfYXXXBS1SkPPtS06r7wKInEasnHCL1FNxN6f0txQDr/kKLMN6j0BU0zClt3NV71MjuCNZMTimuMVJUekWkJLd6iZej/zEo9wFD5LqVaJ3DoH5XvRT1XrRmV8fhtkYXe1Pfj7V8L09xA=
+  app:
+    staging: reeach
+  skip_cleanup: true
+after_deploy: "./after_deploy.sh"

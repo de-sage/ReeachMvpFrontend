@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - 10
+addons:
+  apt:
+    packages:
+      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
+      - libgconf-2-4
+cache:
+  npm: true
+  directories:
+    - node_modules
+install:
+  - npm ci
+script:
+  - npm run test:unit
+  - $(npm bin)/cypress run --record
+after_script:
+  - cat ./coverage/lcov.info | coveralls
+after_success:
+  - npm run build
+before_deploy:
+  - ./before_deploy.sh
+deploy:
+  provider: heroku
+  api_key:
+    secure: ADD_API_KEY_HERE
+  app:
+    staging: reeach
+after_deploy:
+  - ./after_deploy.sh
