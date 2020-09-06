@@ -20,8 +20,8 @@ export default new Router({
   },
   routes: [
     {
-      name: "Layout",
-      path: "/",
+      name: "Button",
+      path: "/button",
       component: LayoutButton,
       meta: { title: "Semicolon - Test Route" }
     }

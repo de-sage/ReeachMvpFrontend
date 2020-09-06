@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-layout row >
-      <v-flex xs12>
-        <alert text="An Error Occured" />
+      <v-flex  xs12>
+        <reeach-button btn-link="/">Start Here</reeach-button>
       </v-flex>
     </v-layout>
 
@@ -14,6 +14,7 @@
 
 <script>
 import Alert from "./components/Alert/Alert";
+import ReeachButton from "./components/Button/Button"
 
 export default {
   name: "App",
@@ -21,7 +22,8 @@ export default {
     return { errorMessage: null, textError: null };
   },
   components: {
-    Alert
+    Alert,
+    ReeachButton
   },
 
 };

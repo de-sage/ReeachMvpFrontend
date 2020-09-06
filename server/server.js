@@ -2,22 +2,19 @@ const express = require("express");
 const favicon = require("express-favicon");
 const path = require("path");
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 2121;
 const app = express();
 
-app.use(favicon(path.join(__dirname, "../", "dist", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "..", "dist", "favicon.ico")));
 
-const isProduction = process.env.NODE_ENV === "production";
 
-console.log(isProduction);
-
-if (isProduction) {
-  app.use(express.static("dist"));
+app.use(express.static("dist"));
   // eslint-disable-next-line global-require
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../", "dist", "index.html"));
-  });
-}
+app.get("/*", (req, res) => {
+  console.log(path.join(__dirname,"..", "dist", "index.html"))
+  res.sendFile(path.join(__dirname,"..", "dist", "index.html"));
+});
+
 
 /* Redirect http to https */
 app.get("*", (req, res, next) => {
