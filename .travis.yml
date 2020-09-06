@@ -13,7 +13,7 @@ install:
 - npm ci
 script:
 - npm run test:unit
-- "$(npm bin)/cypress run --record"
+- "$(npm bin)/cypress run"
 after_script:
 - cat ./coverage/lcov.info | coveralls
 after_success:
