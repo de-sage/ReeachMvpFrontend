@@ -1,8 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import programmaticScrolling from "vuetify/es5/services/goto";
-import ResponseLayout from "../components/Layout/ResponseLayout";
-import ApplicantLayout from "../components/Layout/ApplicantLayout";
+import LayoutButton from "@/components/LayoutButton/LayoutButton";
 
 Vue.use(Router);
 
@@ -21,48 +20,13 @@ export default new Router({
   },
   routes: [
     {
-      name: "test",
-      path: "/test",
-      component: () => import("@/components/testing/parentInput/parentInput"),
+      name: "Layout",
+      path: "/",
+      component: LayoutButton,
       meta: { title: "Semicolon - Test Route" }
-    },
-    {
-      name: "apply",
-      path: "/apply",
-      component: () => import("@/views/RegisterationView"),
-      meta: { title: "Semicolon - Application" }
-    },
-    {
-      name: "response",
-      path: "/response",
-      component: ResponseLayout,
-      meta: { title: "Semicolon - Response" }
-    },
-    {
-      name: "dashboard",
-      path: "/dashboard",
-      component: ApplicantLayout,
-      meta: { title: "Semicolon - dashboard" }
-    },
-    {
-      name: "Create Password",
-      path: "/create-password",
-      component: () => import("@/views/CreatePasswordView"),
-      meta: { title: "Semicolon - Create A Password" }
-    },
-    {
-      name: "Login",
-      path: "/login",
-      component: () => import("@/views/LoginView"),
-      meta: { title: "Semicolon - Login" }
-    },
-
-    {
-      name: "reset-password",
-      path: "/reset-password",
-      component: () => import("@/views/ResetPasswordView"),
-      meta: { title: "Semicolon - Reset Password" }
     }
+
+
   ],
   mode: "history"
 });

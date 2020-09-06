@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "layout-button",
+  name: "reeach-button",
   props: {
     btnLink: {
       type: String

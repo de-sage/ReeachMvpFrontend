@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-layout row v-if="errors">
+    <v-layout row >
       <v-flex xs12>
-        <alert :text="errors" />
+        <alert text="An Error Occured" />
       </v-flex>
     </v-layout>
 
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import Alert from "./components/Alert/Alert";
 
 export default {
@@ -24,22 +23,6 @@ export default {
   components: {
     Alert
   },
-  watch: {
-    errors: function (currentError, previousError) {
-      if (
-        currentError &&
-        currentError.response &&
-        currentError !== previousError
-      ) {
-        this.textError = currentError.response.data.error;
-      }
-    }
-  },
-  computed: {
-    ...mapState({
-      errors: (state) => state.auth.errors,
-      isLoading: (state) => state.auth.isLoading
-    })
-  }
+
 };
 </script>
