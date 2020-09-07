@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import programmaticScrolling from "vuetify/es5/services/goto";
-import LayoutButton from "@/components/Button/Button";
+import LayoutButton from "@/components/CustomButton/Button";
 
 Vue.use(Router);
 
