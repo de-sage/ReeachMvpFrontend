@@ -2,7 +2,8 @@
   <v-app>
     <v-layout row >
       <v-flex  xs12>
-        <reeach-button btn-link="/">Start Here</reeach-button>
+        <custom-button btn-link="/">Start Here</custom-button>
+        <Alert text="This is a custom text"/>
       </v-flex>
     </v-layout>
 
@@ -14,7 +15,7 @@
 
 <script>
 import Alert from "./components/Alert/Alert";
-import ReeachButton from "./components/Button/Button"
+import CustomButton from "./components/CustomButton/Button"
 
 export default {
   name: "App",
@@ -23,7 +24,7 @@ export default {
   },
   components: {
     Alert,
-    ReeachButton
+    CustomButton
   },
 
 };

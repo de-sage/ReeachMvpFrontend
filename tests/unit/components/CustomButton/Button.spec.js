@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import Button from "../../../../src/components/Button/Button";
+import Button from "../../../../src/components/CustomButton/Button";
 
 
 describe("Button Component", () => {
@@ -10,15 +10,19 @@ describe("Button Component", () => {
     }});
 
   });
-  it("It should not have a created hook defined", () => {
+  test('is a Vue instance', () => {
+    expect(wrapper.isVueInstance).toBeTruthy();
+  });
+
+  test("It should not have a created hook of undefined", () => {
     expect(typeof Button.created).toBe("undefined");
   });
 
-  it("It has a name type of string ", () => {
+  test("It has a name type of string ", () => {
     expect(typeof Button.name).toBe("string");
   });
 
-  it("It has a does not have a props property", () => {
+  test("It has a does not have a props property", () => {
     expect(typeof Button.props).toBe("object");
   });
 
